@@ -1,0 +1,13 @@
+name = "FnMatch"
+uuid = "74b0f5d0-13c9-11ea-3e17-41c643855898"
+authors = ["Carl Morris <carl.morris.world@outlook.com>"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
