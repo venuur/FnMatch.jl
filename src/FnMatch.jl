@@ -85,11 +85,11 @@ function translate(pat)
                             break
                         end
                         k = first(f)
-                        push!(chunks, pat[i:prevind(pat,k)])
+                        push!(chunks, pat[i:prevind(pat, k)])
                         i = nextind(pat, k)
                         k = nextind(pat, k, 3)
                     end
-                    push!(chunks, pat[i:prevind(pat,j)])
+                    push!(chunks, pat[i:prevind(pat, j)])
                     # Escape backslashes and hyphens for set difference (--).
                     # Hyphens that create ranges shouldn't be escaped.
                     stuff = join(

@@ -26,7 +26,8 @@ end
 @testset "FnMatch.jl" begin
     @testset "single range" begin
         pat = "[--P]*"
-        expected = [".git", ".gitignore", "LICENSE", "Manifest.toml", "Project.toml"]
+        expected =
+            [".git", ".gitignore", "LICENSE", "Manifest.toml", "Project.toml"]
         test_filter_match(pat, expected, filenames)
     end  # Ranges open left
 
