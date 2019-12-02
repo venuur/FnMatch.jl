@@ -56,6 +56,14 @@ end
         test_filter_match(pat, expected, filenames)
     end
 
+    # TODO: Support character classes.
+    #       http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_03.html
+    # @testset ":lower: character class" begin
+    #     pat = "[[:lower:]]*"
+    #     expected = ["src", "test"]
+    #     test_filter_match(pat, expected, filenames)
+    # end
+
     @testset "literal brackets 1" begin
         source = ["[.txt", "].txt", "[].txt"]
         pat = "[]]*"
