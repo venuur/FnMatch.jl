@@ -92,9 +92,12 @@ function translate(pat)
                     push!(chunks, pat[i:prevind(pat,j)])
                     # Escape backslashes and hyphens for set difference (--).
                     # Hyphens that create ranges shouldn't be escaped.
-                    stuff = join([
-                        replace(replace(s, "\\" => "\\\\"), "-" => "\\-")
-                        for s in chunks], "-")
+                    stuff = join(
+                        map(chunks) do s
+                            replace(replace(s, "\\" => "\\\\"), "-" => "\\-")
+                        end,
+                        "-",
+                    )
                 end
                 # Escape set operations (&&, ~~, and ||).
                 stuff = replace(stuff, r"([&~|])" => s"\\\1")
