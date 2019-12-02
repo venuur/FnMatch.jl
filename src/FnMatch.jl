@@ -111,7 +111,10 @@ function translate(pat)
             res *= escape(c)
         end
     end
-    Regex("(?s:$(res))\\Z")
+    # In the reference implement of Python fnmatch there is not "\A" to start
+    # the regex because Python's regex match only matches from the beginning by
+    # default.
+    Regex("\\A(?s:$(res))\\Z")
 end
 
 """
