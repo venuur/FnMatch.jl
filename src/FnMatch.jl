@@ -93,7 +93,7 @@ function translate(pat)
                     # Escape backslashes and hyphens for set difference (--).
                     # Hyphens that create ranges shouldn't be escaped.
                     stuff = join([
-                        replace(s, "\\" => "\\\\", "-" => "\\-")
+                        replace(replace(s, "\\" => "\\\\"), "-" => "\\-")
                         for s in chunks], "-")
                 end
                 # Escape set operations (&&, ~~, and ||).
